@@ -1,0 +1,555 @@
+/* =========================
+   BASIC RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: #15152b;
+    color: #27243a;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   SCREEN / SECTIONS
+========================= */
+
+.screen {
+    min-height: 100vh;
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+.screen.active {
+    display: flex;
+    animation: screenIn 0.7s ease forwards;
+}
+
+@keyframes screenIn {
+    from {
+        opacity: 0;
+        transform: translateY(25px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+
+/* =========================
+   BACKGROUNDS
+========================= */
+
+#opening,
+#birthday,
+#stats,
+#hopes,
+#quiz {
+    background: linear-gradient(
+        135deg,
+        #fff4f7,
+        #f8eaff,
+        #e9f5ff
+    );
+}
+
+#certificate,
+#message {
+    background: #fff0e6;
+}
+
+#final {
+    background:
+        radial-gradient(circle at top, #38386a, #15152b 65%);
+    color: white;
+}
+
+
+/* =========================
+   CONTENT
+========================= */
+
+.content {
+    width: min(700px, 100%);
+    text-align: center;
+    position: relative;
+    z-index: 2;
+}
+
+.small-text {
+    font-size: 0.95rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    opacity: 0.7;
+}
+
+h1 {
+    font-size: clamp(2.3rem, 8vw, 5rem);
+    line-height: 1.05;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: clamp(1.8rem, 5vw, 3rem);
+    margin-bottom: 25px;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    opacity: 0.75;
+    margin-bottom: 35px;
+}
+
+.message {
+    max-width: 600px;
+    margin: 25px auto;
+    font-size: 1.05rem;
+    line-height: 1.8;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+button {
+    border: none;
+    padding: 14px 25px;
+    border-radius: 50px;
+    background: #27243a;
+    color: white;
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    margin-top: 20px;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+button:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+}
+
+button:active {
+    transform: scale(0.96);
+}
+
+
+/* =========================
+   GIFT
+========================= */
+
+.gift,
+.final-gift {
+    font-size: 7rem;
+    margin: 25px 0 35px;
+    cursor: pointer;
+    display: inline-block;
+    animation: giftFloat 2.5s ease-in-out infinite;
+}
+
+@keyframes giftFloat {
+    0%,
+    100% {
+        transform: translateY(0) rotate(-2deg);
+    }
+
+    50% {
+        transform: translateY(-15px) rotate(2deg);
+    }
+}
+
+.gift.opened,
+.final-gift.opened {
+    animation: giftOpen 0.7s ease forwards;
+}
+
+@keyframes giftOpen {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.3) rotate(8deg);
+    }
+
+    100% {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+
+/* =========================
+   CAKE
+========================= */
+
+.cake {
+    font-size: 8rem;
+    margin: 25px 0;
+    animation: cakeBounce 2s ease-in-out infinite;
+}
+
+@keyframes cakeBounce {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+
+/* =========================
+   CERTIFICATE
+========================= */
+
+.paper {
+    width: min(650px, 100%);
+    padding: 45px 30px;
+    text-align: center;
+
+    background:
+        repeating-linear-gradient(
+            0deg,
+            transparent,
+            transparent 30px,
+            rgba(100, 70, 50, 0.04) 31px
+        ),
+        #fffaf1;
+
+    border: 2px solid #d9c6ad;
+    border-radius: 12px;
+
+    box-shadow:
+        0 20px 50px rgba(80, 50, 30, 0.15);
+
+    transform: rotate(-1deg);
+}
+
+.checklist {
+    text-align: left;
+    width: min(430px, 100%);
+    margin: 25px auto;
+}
+
+.checklist p {
+    padding: 10px 0;
+    font-size: 1.05rem;
+}
+
+.stamp {
+    display: inline-block;
+    border: 3px solid #8f5367;
+    color: #8f5367;
+    padding: 12px;
+    border-radius: 50%;
+    font-weight: 800;
+    transform: rotate(-10deg);
+    margin: 15px 0;
+}
+
+
+/* =========================
+   FRIENDSHIP STATS
+========================= */
+
+.stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin: 30px 0;
+}
+
+.stat {
+    padding: 22px 15px;
+    border-radius: 22px;
+    background: rgba(255, 255, 255, 0.75);
+    box-shadow: 0 10px 25px rgba(80, 50, 100, 0.08);
+    font-size: 2rem;
+    transition: transform 0.25s ease;
+}
+
+.stat:hover {
+    transform: translateY(-7px) rotate(1deg);
+}
+
+.stat span {
+    display: block;
+    font-size: 0.9rem;
+    margin: 8px 0;
+    opacity: 0.7;
+}
+
+.stat strong {
+    display: block;
+    font-size: 1.4rem;
+}
+
+
+/* =========================
+   HOPES
+========================= */
+
+.hope-list {
+    display: grid;
+    gap: 15px;
+    margin: 30px auto;
+    width: min(500px, 100%);
+}
+
+.hope-list div {
+    padding: 18px;
+    border-radius: 20px;
+    background: white;
+    box-shadow: 0 8px 20px rgba(80, 50, 100, 0.08);
+    font-size: 1.05rem;
+    transition: transform 0.25s ease;
+}
+
+.hope-list div:hover {
+    transform: translateX(8px);
+}
+
+
+/* =========================
+   LETTER
+========================= */
+
+.letter {
+    width: min(650px, 100%);
+    background: #fffdf7;
+    padding: 45px 35px;
+    border-radius: 8px;
+
+    box-shadow:
+        8px 10px 0 rgba(120, 80, 60, 0.08),
+        0 20px 50px rgba(80, 50, 30, 0.12);
+
+    position: relative;
+}
+
+.letter::before {
+    content: "♡";
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 2rem;
+    opacity: 0.25;
+}
+
+.letter p {
+    font-family: Georgia, serif;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    text-align: left;
+    margin-bottom: 18px;
+}
+
+.letter h2 {
+    font-family: "Pacifico", cursive;
+    font-weight: 400;
+}
+
+.signature {
+    text-align: right !important;
+    font-weight: bold;
+}
+
+
+/* =========================
+   QUIZ
+========================= */
+
+.question {
+    background: white;
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 15px 35px rgba(70, 50, 100, 0.1);
+    margin: 25px auto;
+}
+
+.question h3 {
+    font-size: 1.25rem;
+    margin-bottom: 15px;
+}
+
+.answer {
+    display: block;
+    width: 100%;
+    margin: 10px 0;
+    background: #f1eafa;
+    color: #27243a;
+}
+
+.answer:hover {
+    background: #e4d8f7;
+}
+
+#quiz-result {
+    min-height: 30px;
+    font-weight: 700;
+}
+
+
+/* =========================
+   FINAL MESSAGE
+========================= */
+
+#final h1 {
+    color: white;
+}
+
+#final .message {
+    color: rgba(255, 255, 255, 0.85);
+}
+
+.hidden {
+    display: none;
+}
+
+#finalMessage {
+    animation: finalReveal 1s ease forwards;
+}
+
+@keyframes finalReveal {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+
+/* =========================
+   FLOATING DECORATIONS
+========================= */
+
+.decorations span {
+    position: fixed;
+    z-index: 1;
+    font-size: 2rem;
+    opacity: 0.35;
+    animation: floatAround 6s ease-in-out infinite;
+}
+
+.decorations span:nth-child(1) {
+    top: 12%;
+    left: 8%;
+}
+
+.decorations span:nth-child(2) {
+    top: 25%;
+    right: 10%;
+    animation-delay: 1s;
+}
+
+.decorations span:nth-child(3) {
+    bottom: 20%;
+    left: 12%;
+    animation-delay: 2s;
+}
+
+.decorations span:nth-child(4) {
+    bottom: 12%;
+    right: 15%;
+    animation-delay: 3s;
+}
+
+.decorations span:nth-child(5) {
+    top: 50%;
+    left: 50%;
+    animation-delay: 4s;
+}
+
+@keyframes floatAround {
+    0%,
+    100% {
+        transform: translateY(0) rotate(0deg);
+    }
+
+    50% {
+        transform: translateY(-25px) rotate(15deg);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .screen {
+        padding: 25px 16px;
+    }
+
+    h1 {
+        font-size: 2.6rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    .subtitle {
+        font-size: 1rem;
+    }
+
+    .message {
+        font-size: 0.98rem;
+    }
+
+    .gift,
+    .final-gift {
+        font-size: 5.5rem;
+    }
+
+    .cake {
+        font-size: 6rem;
+    }
+
+    .stats {
+        grid-template-columns: 1fr;
+    }
+
+    .paper,
+    .letter {
+        padding: 32px 22px;
+    }
+
+    .letter p {
+        font-size: 0.98rem;
+    }
+
+    .decorations span {
+        font-size: 1.5rem;
+    }
+
+}

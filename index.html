@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Birthday Surprise 🎂</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Pacifico&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Floating Decorations -->
+    <div class="decorations">
+        <span>✦</span>
+        <span>♡</span>
+        <span>✧</span>
+        <span>♡</span>
+        <span>✦</span>
+        
+    </div>
+
+
+    <!-- SECTION 1 : OPENING -->
+
+    <section id="opening" class="screen active">
+
+        <div class="content">
+
+            <p class="small-text">
+                A little surprise for Bachaaa...
+            </p>
+
+            <h1>
+                Hey, Birthday Girl! 🎀
+            </h1>
+
+            <p class="subtitle">
+                Someone made something special for you.
+            </p>
+
+            <div class="gift" id="gift">
+                🎁
+            </div>
+
+            <button onclick="openGift()">
+                Open Your Gift →
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SECTION 2 : BIRTHDAY -->
+
+    <section id="birthday" class="screen">
+
+        <div class="content">
+
+            <p class="small-text">
+                Today is your day ✨
+            </p>
+
+            <h1>
+                HAPPY BIRTHDAY ! 🎂
+            </h1>
+
+            <div class="cake">
+                🎂
+            </div>
+
+            <p class="message">
+                Wishing you happiness, success,
+                crazy memories and lots of reasons to smile. 💗
+            </p>
+
+            <button onclick="nextSection('certificate')">
+                Continue →
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SECTION 3 : CERTIFICATE -->
+
+    <section id="certificate" class="screen">
+
+        <div class="paper">
+
+            <p class="small-text">
+                🏆 Official Certificate
+            </p>
+
+            <h2>
+                Certified Best Friend
+            </h2>
+
+            <div class="checklist">
+
+                <p>✓ Annoying (in the best way)</p>
+                <p>✓ Crazy</p>
+                <p>✓ Always there</p>
+                <p>✓ Makes life 10x better</p>
+                <p>✓  Ur are Fvrt my best friend 😂</p>
+
+            </div>
+
+            <div class="stamp">
+                100%<br>
+                REAL FRIEND
+            </div>
+
+            <button onclick="nextSection('stats')">
+                Next →
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SECTION 4 : FRIENDSHIP STATS -->
+
+    <section id="stats" class="screen">
+
+        <div class="content">
+
+            <h1>
+                Our Friendship Stats ♡
+            </h1>
+
+            <div class="stats">
+
+                <div class="stat">
+                    😂
+                    <span>Random Laughs</span>
+                    <strong>100%</strong>
+                </div>
+
+                <div class="stat">
+                    💬
+                    <span>Random Talks</span>
+                    <strong>98%</strong>
+                </div>
+
+                <div class="stat">
+                    🤯
+                    <span>Bakchodi and Masti</span>
+                    <strong>1000%</strong>
+                </div>
+
+                <div class="stat">
+                    🍕
+                    <span>Food Discussions</span>
+                    <strong>99%</strong>
+                </div>
+
+                <div class="stat">
+                    🫶
+                    <span>Friendship</span>
+                    <strong>∞</strong>
+                </div>
+
+            </div>
+
+            <p class="message">
+                Same chaos. Different day. Still us. 😂
+            </p>
+
+            <button onclick="nextSection('hopes')">
+                Continue →
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SECTION 5 : HOPES -->
+
+    <section id="hopes" class="screen">
+
+        <div class="content">
+
+            <h1>
+                Things I Hope For You ♡
+            </h1>
+
+            <div class="hope-list">
+
+                <div>☀️ More happiness</div>
+
+                <div>🌸 More beautiful memories</div>
+
+                <div>🚀 More success</div>
+
+                <div>😌 Less stress</div>
+
+                <div>✨ More reasons to smile</div>
+
+            </div>
+
+            <p class="message">
+                You deserve all the good things in the world.
+            </p>
+
+            <button onclick="nextSection('message')">
+                There's More →
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SECTION 6 : PERSONAL MESSAGE -->
+
+    <section id="message" class="screen">
+
+        <div class="letter">
+
+            <h2>
+                A Little Message For You 💌
+            </h2>
+
+            <p>
+                Hey birthday girl,
+            </p>
+
+            <p>
+                I just wanted to say that you're genuinely
+                one of those people who can make ordinary
+                days a little more fun.
+            </p>
+
+            <p>
+                You bring your own kind of energy, craziness
+                and good vibes, and honestly, that's what
+                makes you special.
+            </p>
+
+            <p>
+                I hope this year brings you lots of happiness,
+                success, new experiences and memories
+                you'll always remember.
+            </p>
+
+            <p>
+                Keep being yourself, keep smiling,
+                and don't forget how amazing you are.
+                whenever you need me I'll be there for you bachaaaa. 😎
+            </p>
+
+            <p>
+                Happy Birthday once again! 🎂✨
+            </p>
+
+            <p class="signature">
+                — Your Best Friend
+            </p>
+
+            <button onclick="nextSection('quiz')">
+                One More Thing 👀
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SECTION 7 : QUIZ -->
+
+    <section id="quiz" class="screen">
+
+        <div class="content">
+
+            <h1>
+                Quick Quiz 😎
+            </h1>
+
+            <p class="subtitle">
+                How well do you know me?
+            </p>
+
+            <div class="question">
+
+                <h3>
+                    What's my favourite food?
+                </h3>
+
+                <button class="answer" onclick="answer(0)">
+                 🥟 Momo 
+                </button>
+
+                <button class="answer" onclick="answer(1)">
+                    🍔 Burger
+                </button>
+
+                <button class="answer" onclick="answer(0)">
+                     🍛 Fried chicken Rice
+                </button>
+
+            </div>
+
+            <p id="quiz-result"></p>
+
+            <button onclick="nextSection('final')">
+                Show Me The Final Surprise →
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- SECTION 8 : FINAL SURPRISE -->
+
+    <section id="final" class="screen">
+
+        <div class="content">
+
+            <p class="small-text">
+                And now...
+            </p>
+
+            <h1>
+                The Final Surprise! 🎁
+            </h1>
+
+            <div class="final-gift" id="finalGift">
+                🎁
+            </div>
+
+            <button onclick="finalSurprise()">
+                Open It →
+            </button>
+
+            <div id="finalMessage" class="hidden">
+
+                <h1>
+                    HAPPY BIRTHDAY Rheaaaa ! 🎉
+                </h1>
+
+                <p class="message">
+                    Keep being the incredible, crazy
+                    and wonderful person you are.
+                </p>
+
+                <p class="message">
+                    Keep smiling.<br>
+                    Keep chasing your dreams.<br>
+                    And Do masti
+                    with  mee and more fun. 😎
+                </p>
+
+                <h2>
+                    You're stuck with this friendship
+                    for a long time. 😂🫶
+                </h2>
+
+                <p>
+                    Have the BIRTHDAY
+
+                 🎂✨ HAPPIEST BIRTHDAY ever ! 🥳💖 ✨
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
